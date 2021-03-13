@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo "building applications..... ${params.project}"
                 withAnt(installation: 'ANT-1.10.9') {
-                    dir("deploy") {
+                    dir("master/deploy") {
                         bat "ant ${params.project} -Dproject=${params.project}"
                     }
                 }
