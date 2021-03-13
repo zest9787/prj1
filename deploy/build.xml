@@ -38,4 +38,8 @@
         <delete dir="${dist}"/>
     </target>
 
+    <target name="prj1">
+        <echo message="${project} 실행합니다."/>
+    </target>
+
 </project>
