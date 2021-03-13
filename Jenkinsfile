@@ -9,8 +9,12 @@ pipeline {
 
     stages {
         stage('checkout') {
-            git credentialsId: 'jenkins_github', url: 'https://github.com/zest9787/prj1.git'
             git credentialsId: 'jenkins_github', url: 'https://github.com/zest9787/prj2.git'
+            git credentialsId: 'jenkins_github', url: 'https://github.com/zest9787/prj3.git'
+        }
+
+        stage('build') {
+            bat 'ant deploy/build.xml'
         }
     }
 }
