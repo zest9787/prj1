@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    tools {
+        ANT 'ANT-1.10.9'
+    }
+
     stages {
 
         stage("checkout") {
@@ -17,6 +21,15 @@ pipeline {
         stage("build") {
             steps {
                 echo "building applications....."
+                withAnt(installation: 'ANT-1.10.9') {
+                    dir("scoring") {
+                        if (isUnix()) {
+                            sh "ant deply/build.xml"
+                        } else {
+                            bat "ant deply/build.xml"
+                        }
+                    }
+                }
             }
         }
         stage("test") {
