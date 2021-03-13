@@ -19,7 +19,7 @@ pipeline {
                 echo "building applications....."
                 withAnt(installation: 'ANT-1.10.9') {
                     dir("scoring") {
-                        bat "ant deply/build.xml"
+                        bat "ant deploy/build.xml"
                     }
                 }
             }
