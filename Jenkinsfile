@@ -11,6 +11,7 @@ pipeline {
         stage('checkout') {
             git credentialsId: 'jenkins_github', url: 'https://github.com/zest9787/prj2.git'
             git credentialsId: 'jenkins_github', url: 'https://github.com/zest9787/prj3.git'
+//            git credentialsId: 'JenkinsID', url: 'https://github.com/zest9787/prj1.git'
         }
 
         stage('build') {
