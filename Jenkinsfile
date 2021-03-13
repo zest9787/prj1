@@ -19,11 +19,7 @@ pipeline {
                 echo "building applications....."
                 withAnt(installation: 'ANT-1.10.9') {
                     dir("scoring") {
-                        if (isUnix()) {
-                            sh "ant deply/build.xml"
-                        } else {
-                            bat "ant deply/build.xml"
-                        }
+                        bat "ant deply/build.xml"
                     }
                 }
             }
