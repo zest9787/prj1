@@ -2,10 +2,6 @@ pipeline {
 
     agent any
 
-    tools {
-        ANT 'ANT-1.10.9'
-    }
-
     stages {
 
         stage("checkout") {
