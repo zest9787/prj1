@@ -22,7 +22,7 @@ pipeline {
                 echo "building applications..... ${params.project}"
                 withAnt(installation: 'ANT-1.10.9') {
                     dir("deploy") {
-                        bat "ant"
+                        bat "ant ${params.project}"
                     }
                 }
             }
