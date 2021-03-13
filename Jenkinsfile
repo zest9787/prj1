@@ -1,6 +1,9 @@
 pipeline {
 
     agent any
+    parameters {
+        choice choices: ['prj1', 'prj2'], name: 'project'
+    }
 
     stages {
 
@@ -16,7 +19,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                echo "building applications....."
+                echo "building applications..... ${params.project}"
                 withAnt(installation: 'ANT-1.10.9') {
                     dir("deploy") {
                         bat "ant"
